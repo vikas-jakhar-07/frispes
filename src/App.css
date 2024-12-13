@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    @apply scroll-smooth;
+}
+
+::-webkit-scrollbar {
+    @apply size-1.5 bg-off-black;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-off-orange rounded-3xl;
+}
+
+.transition-slow {
+    @apply duration-300 ease-linear;
+}
+
+.scroll-button:hover .scroll-icon {
+    transform: rotateY(180deg);
+}
+
+.swiper-scrollbar {
+    @apply !bg-medium-gray !left-1/2 !-translate-x-1/2 !bottom-[35px] !top-auto !rounded-none;
+    width: calc(18.5% - 2* var(--swiper-scrollbar-sides-offset, 2%)) !important;
+}
+
+.swiper-scrollbar-drag {
+    @apply !bg-off-red !rounded-none;
+}
+
+.swiper-pagination {
+    @apply !bottom-0 !top-auto !font-lato !font-normal !text-xs !text-off-blue;
+}
+
+.swiper-pagination-current {
+    @apply !text-lg !font-medium;
+}
+
+.swiper-pagination-total {
+    @apply !text-light-gray !text-base;
+}
+
+.gallery .swiper-slide {
+    @apply !mt-auto !h-[350px];
+    transition: all 300ms linear;
+}
+
+.card {
+    perspective: 800px;
+}
+
+.card-content {
+    transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(.5turn);
+}
+
+.card:hover .card-content {
+    transform: rotateY(.5turn);
+}
+
+@media (min-width:1024px) {
+    .gallery .swiper-wrapper {
+        @apply !h-[606px] !pl-[65px];
+    }
+
+    .gallery .swiper-slide-prev {
+        @apply !h-[606px] !w-[445px] duration-300 ease-linear;
+    }
+
+    .facilities .swiper-pagination {
+        @apply !bottom-[125px] !top-auto !-left-1/2;
+        transform: rotate(-90deg) translateY(50%);
+    }
+
+    .facilities .swiper-scrollbar {
+        @apply !w-1 !left-3.5 !translate-x-0 !bottom-auto !top-0;
+        height: calc(46.5% - 2* var(--swiper-scrollbar-sides-offset, 1%)) !important;
+    }
+}
+
+@media (min-width:1200px) {
+    .gallery .swiper-wrapper {
+        @apply pl-[115px];
+    }
+}
+
+@media (min-width:1536px) {
+    .gallery .swiper-wrapper {
+        @apply pl-[170px];
+    }
+}
+
+@media (min-width: 1920px) {
+    .custom-ml {
+        margin-left: calc((1920px - 1110px) / 2) !important;
+    }
+
+    .gallery .swiper-wrapper {
+        @apply pl-[290px];
+    }
+}
